@@ -1,0 +1,1 @@
+class MessagePolicy < ApplicationPolicy; end

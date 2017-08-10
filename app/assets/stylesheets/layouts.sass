@@ -1,0 +1,85 @@
+@import 'variables'
+
+body
+  font-family: Roboto
+  font-size:   16px
+
+header, footer, .alert, .notice, h2
+  font-family: Oswald
+
+.main
+  margin: 30px auto
+
+.modal-header, .panel-heading
+  display:         flex
+  justify-content: space-between
+  align-items:     center
+
+.flat-container
+  display:         flex
+  margin:          20px 10px
+  padding:         20px
+  min-height:      200px
+  border:          1px solid $border
+  align-items:     center
+  justify-content: center
+  flex-wrap:       wrap
+
+  & > *
+    font-weight: 200
+    color:       $empty_text
+    width:       100%
+    text-align:  center
+
+  img
+    width:  50%
+    margin: 20px
+
+a
+  outline: none
+  text-decoration: none !important
+
+.paginator
+  text-align: center
+.inline
+  display: inline-block
+.right
+  float: right
+
+.actions-wrapper
+  .social
+    font-size: 3em
+
+header
+  .navbar-brand
+    padding:        5px 15px
+    vertical-align: middle
+
+    h1
+      margin:         0
+      vertical-align: middle
+      font-weight:    200
+      font-size:      1.5em
+
+    img
+      max-width:      32px
+      vertical-align: middle
+
+    h1, img
+      display: inline
+
+  .nav
+    a
+      padding:   10px 15px
+      font-size: 1.2em
+
+footer
+  a
+    color: inherit !important
+
+    p
+      margin: 0
+      -webkit-margin-before: 1em
+      -webkit-margin-after: 1em
+      -webkit-margin-start: 0
+      -webkit-margin-end: 0

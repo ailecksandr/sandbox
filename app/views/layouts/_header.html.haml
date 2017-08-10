@@ -1,0 +1,27 @@
+%header.navbar.navbar-default.navbar-static-top
+  .container
+    %button.navbar-toggle{ type: :button, data: { toggle: :collapse, target: '.navbar-responsive-collapse' } }
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to root_path, class: 'navbar-brand' do
+      = image_tag 'logo.png'
+      %h1= t('app_name')
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{ data: { toggle: 'dropdown' }, href: '#' }
+              %i.fa.fa-angle-down
+              %span= t('.my_profile')
+            %ul.dropdown-menu
+              - if current_user.admin?
+                %li= link_to t('.admin_panel'), rails_admin_path
+              - if policy(:user).edit?
+                %li= link_to t('.private_cabinet'), edit_user_registration_path
+              %li#messages-nav= link_to t('.messages', count: current_user.decorate.unread_messages_count), dialogs_path
+          %li
+            = link_to t('.sign_out'), destroy_user_session_path, method: 'delete'
+        - else
+          %li
+            = link_to t('.sign_in'), new_user_session_path

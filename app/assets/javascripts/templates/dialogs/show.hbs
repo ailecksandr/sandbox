@@ -1,0 +1,16 @@
+<div id="dialog-container" data-user-id="{{user_id}} "data-id="{{id}}" class="panel panel-default shown">
+  <div class="panel-heading">
+    {{user_nickname}}
+    {{> 'dialogs/partials/_status'}}
+  </div>
+  <div class="panel-body">
+    {{#if messages}}
+      {{#each messages as |message|}}
+        {{> 'partials/_message' message=message }}
+      {{/each}}
+    {{else}}
+      {{> 'dialogs/partials/_empty' }}
+    {{/if}}
+  </div>
+  {{> 'dialogs/partials/_message_form' url=new_message_url disable_reason=disable_reason}}
+</div>

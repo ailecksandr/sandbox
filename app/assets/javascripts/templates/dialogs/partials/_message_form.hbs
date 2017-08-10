@@ -1,0 +1,15 @@
+<div class="panel-footer">
+  <form action="{{url}}" id="new-message-form" method="POST" data-remote="true">
+    {{> 'partials/_auth_token' }}
+    <div class="input-group {{#if disable_reason}}disabled{{/if}}">
+      <input name="message[body]" class="form-control" type="text"
+             oninvalid="this.setCustomValidity('Message can\'t be empty!')"
+             oninput="setCustomValidity('')" required
+             {{#if disable_reason}}disabled="disabled"{{/if}}
+             placeholder="{{#if disable_reason}}{{disable_reason}}{{else}}Enter message{{/if}}"/>
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-default" value="Send" {{#if disable_reason}}disabled="disabled"{{/if}}/>
+      </span>
+    </div>
+  </form>
+</div>

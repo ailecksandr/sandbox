@@ -1,0 +1,7 @@
+- if @new_messages_count.zero?
+  .flat-container
+    %h2 There are not new messages
+- else
+  .flat-container
+    = link_to dialogs_path do
+      %h2= "You have #{@new_messages_count} new messages"

@@ -1,0 +1,9 @@
+= simple_form_for dialog, remote: true, format: :js do |f|
+  .modal-header
+    %h4.modal-title New Dialog
+  .modal-body
+    .form-group
+    .form-group
+  .modal-footer
+    .actions
+      = f.submit 'Create', class: ' btn btn-shadow btn-info confirm', data: { target: '#meals-action', toggle: :modal }

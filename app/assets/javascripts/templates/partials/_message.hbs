@@ -1,0 +1,9 @@
+{{#with message}}
+  <div class="row message-bubble {{message_class}} {{read_class}}" data-id="{{id}}">
+    <p class="text-muted">{{user.profile.nickname}}</p>
+    <div class="message-body">
+      <span>{{body}}</span>
+      <small>{{sent_at}}</small>
+    </div>
+  </div>
+{{/with}}

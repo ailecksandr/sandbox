@@ -1,0 +1,9 @@
+<ul id="dialogs-list" class="list-group">
+  {{#if users}}
+    {{#each users as |user|}}
+      {{> 'dialogs/partials/_user' user=user }}
+    {{/each}}
+  {{else}}
+    {{> 'dialogs/partials/_not_found' }}
+  {{/if}}
+</ul>

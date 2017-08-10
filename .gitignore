@@ -1,0 +1,21 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+.idea
+.rspec
+coverage
+public/system
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore application configuration
+/config/secrets.yml
+
+/node_modules
+/public/assets

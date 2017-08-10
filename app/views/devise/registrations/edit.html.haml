@@ -1,0 +1,34 @@
+= bootstrap_devise_error_messages!
+
+.panel.panel-default.devise-bs
+  .panel-heading
+    %h4 Private Cabinet
+  .panel-body
+    = simple_form_for profile, as: :profile, url: profile_path(profile), html: { multipart: true } do |f|
+      .col-md-6
+        .form-group
+          = f.input :nickname, autofocus: true, input_html: { class: 'form-control', required: true }
+        .form-group
+          = f.input :first_name, input_html: { class: 'form-control' }
+        .form-group
+          = f.input :last_name, input_html: { class: 'form-control' }
+        .form-group
+          = f.input :phone, input_html: { class: 'form-control' }
+        - if f.object.model_avatar.exists?
+          .avatar.form-group
+            = image_tag f.object.model_avatar_url, class: 'img-thumbnail'
+        .file-field-container
+          = f.input :avatar, as: :file, accept: image_types_for_field, placeholder: 'Select avatar'
+
+        = f.submit 'Update profile', class: 'btn btn-primary right'
+
+    .col-md-6
+      = label_tag 'Change password'
+      = simple_form_for resource, as: :user, url: change_password_path do |f|
+        .form-group
+          = f.password_field :current_password, placeholder: 'Current password', class: 'form-control'
+        .form-group
+          = f.password_field :password, autocomplete: 'off', placeholder: 'New password', class: 'form-control'
+        .form-group
+          = f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form-control'
+        = f.submit 'Change password', class: 'btn btn-info right', data: { disable_with: 'Обробка...' }

@@ -1,0 +1,53 @@
+en:
+  app_name:   'Sandbox'
+  app_action: '%{action_name} | Sandbox'
+
+  activerecord:
+    errors:
+      models:
+         dialog:
+           messages:
+             same_users: "Users can't be the same"
+
+  time:
+    ago: '%{time} ago'
+    formats:
+      human_time: '%H:%M:%S | %d.%M.%Y'
+
+  assets:
+    types:
+      stylesheet: Stylesheet
+      javascript: Script
+    errors:
+      not_loaded: "%{asset_type} for '%{path}' wasn't loaded!"
+
+  layouts:
+    header:
+      my_profile:      My Profile
+      admin_panel:     Admin Panel
+      private_cabinet: Private Cabinet
+      messages:        'Messages (%{count})'
+      sign_out:        Sign Out
+      sign_in:         Sign In
+    footer:
+
+  profiles:
+    update:
+      success: 'Profile was successfully changed'
+
+  home:
+    index:
+      page_title: Home
+
+  dialogs:
+    index:
+      page_title: Chat
+    new:
+      disable_reasons:
+        blocked:           You have been blocked
+        companion_blocked: User have been blocked
+
+  registrations:
+    edit:
+      page_title: Private Cabinet
+

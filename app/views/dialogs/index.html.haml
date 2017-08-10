@@ -1,0 +1,21 @@
+.row
+  .col-xs-10.col-sm-5
+    .panel.panel-default.d-list
+      .panel-heading
+        %span.title Dialogs
+        .d-search
+          %input#dialogs-search.form-control{ data: { url: dialogs_path }, placeholder: 'Search user' }
+          - if policy(:dialog).new?
+            = link_to new_dialog_path, remote: true do
+              %i.fa.fa-plus
+      %ul#dialogs-list.list-group
+
+  .col-xs-14.col-sm-7
+    .m-list{ data: { url: dialogs_path, message_url: dialog_messages_path(dialog_id: DIALOG_ID_URL_KEY) } }
+      .panel.panel-default#dialog-container
+
+- if policy(:dialog).new?
+  .modal.fade{ id: 'new-dialog', 'aria-hidden': true, 'aria-labelledby': 'new-dialog', role: :dialog, tabindex: '-1',
+               data: { url: dialogs_path, users_url: users_path } }
+    .modal-dialog
+      .modal-content

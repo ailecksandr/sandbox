@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }
+    %title= page_title
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload', media: 'all'
+    = include_action_stylesheet
+    = yield :stylesheets
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = include_action_javascript
+
+  %body
+    = render partial: 'layouts/header'
+
+    .container.main
+      = bootstrap_flash
+      = yield
+
+    = render partial: 'layouts/footer'
+
+    = yield :scripts

@@ -1,0 +1,22 @@
+<form action="{{url}}" method="POST" id="new-dialog-form" data-remote="true">
+  <div class="modal-header">
+    <h4 class="modal-title">New Dialog</h4>
+    <a href="#" data-target="#new-dialog" data-toggle="modal">
+        <i class="fa fa-times"></i>
+    </a>
+  </div>
+  <div class="modal-body">
+    <input name="dialog[creator_id]" type="hidden" value="{{current_user_id}}"/>
+    {{> 'partials/_auth_token' }}
+
+    <div class="form-group">
+      <input name="dialog[companion_id]" id="select-new-dialog" placeholder="Select User" class="form-control"/>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="actions">
+      <input type="submit" class="btn btn-shadow btn-info confirm" data-target="#new-dialog"
+             data-toggle="modal" value="Create"/>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,18 @@
+default: &default
+  adapter:  postgresql
+  encoding: utf-8
+  username: <%= Rails.application.secrets.sandbox_database_username %>
+  password: <%= Rails.application.secrets.sandbox_database_password %>
+  pool:     <%= Rails.application.secrets.rails_max_threads %>
+
+development:
+  <<: *default
+  database: sandbox_dev
+
+test:
+  <<: *default
+  database: sandbox_test
+
+production:
+  <<: *default
+  database: sandbox_prod
